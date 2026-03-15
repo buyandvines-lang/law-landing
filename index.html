@@ -13,13 +13,11 @@
       --bg:#07111e;
       --bg-2:#0b1727;
       --card:#0f1d30;
-      --card-2:#12233a;
       --line:rgba(255,255,255,.09);
       --text:#f5f7fb;
       --muted:#aeb9ca;
       --gold:#d9b36b;
       --gold-2:#bf8d32;
-      --dark:#101418;
       --shadow:0 24px 60px rgba(0,0,0,.34);
       --radius:26px;
       --container:1200px;
@@ -39,117 +37,127 @@
       line-height:1.55;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
 
     .container{
       width:min(var(--container), calc(100% - 40px));
       margin:0 auto;
     }
 
+    /* ===== HEADER ===== */
+
     .topbar{
       position:sticky;
       top:0;
       z-index:100;
       backdrop-filter:blur(14px);
-      background:rgba(7,17,30,.82);
+      background:rgba(7,17,30,.88);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  backdrop-filter:blur(14px);
-  background:rgba(7,17,30,.88);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
+    .topbar-inner{
+      min-height:108px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
 
-.topbar-inner{
-  min-height:108px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
+    .brand-wrap{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      min-width:0;
+    }
 
-.brand-wrap{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
+    .logo-box{
+      width:92px;
+      height:92px;
+      border-radius:22px;
+      border:1px solid rgba(217,179,107,.35);
+      background:linear-gradient(135deg,rgba(217,179,107,.22),rgba(255,255,255,.04));
+      box-shadow:0 18px 34px rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
 
-.logo-box{
-  width:92px;
-  height:92px;
-  border-radius:22px;
-  border:1px solid rgba(217,179,107,.35);
-  background:linear-gradient(135deg,rgba(217,179,107,.22),rgba(255,255,255,.04));
-  box-shadow:0 18px 34px rgba(0,0,0,.35);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
+    .logo-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-.logo-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    .brand{
+      min-width:0;
+    }
 
-.brand-title{
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:.02em;
-}
+    .brand-title{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:.02em;
+      line-height:1.05;
+      white-space:nowrap;
+    }
 
-.brand-subtitle{
-  font-size:13px;
-  color:#9fb0c6;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-top:4px;
-}
+    .brand-subtitle{
+      font-size:13px;
+      color:#9fb0c6;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-top:4px;
+    }
 
-.nav{
-  display:flex;
-  align-items:center;
-  gap:26px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
 
-.nav a{
-  font-size:15px;
-  color:#b3bfd2;
-}
+    .nav a{
+      font-size:15px;
+      color:#b3bfd2;
+    }
 
-.nav a:hover{
-  color:#ffffff;
-}
+    .nav a:hover{
+      color:#ffffff;
+    }
 
-.nav-cta{
-  padding:14px 28px;
-  border-radius:40px;
-  background:linear-gradient(135deg,#e0b45a 0%,#c7922f 100%);
-  color:#0b1422 !important;
-  font-weight:900;
-  font-size:15px;
-  letter-spacing:.02em;
-  box-shadow:0 12px 30px rgba(199,146,47,.45);
-  border:none;
-}
+    .nav-cta{
+      min-height:52px;
+      padding:14px 28px;
+      border-radius:40px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+      background:linear-gradient(135deg,#e0b45a 0%,#c7922f 100%) !important;
+      color:#0b1422 !important;
+      font-weight:900 !important;
+      font-size:15px;
+      letter-spacing:.02em;
+      text-shadow:none !important;
+      border:none;
+      box-shadow:0 12px 30px rgba(199,146,47,.45);
+    }
 
     .nav a.nav-cta{
       color:#0b1422 !important;
     }
 
-    .btn-primary,
-    .submit-btn{
-      background:linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
-      color:#111111;
-      font-weight:800;
-      box-shadow:0 14px 28px rgba(191,141,50,.32);
-    }
+    /* ===== HERO ===== */
 
     .hero{
       padding:64px 0 24px;
@@ -265,6 +273,14 @@
       font-weight:800;
     }
 
+    .btn-primary,
+    .submit-btn{
+      background:linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+      color:#111111;
+      font-weight:800;
+      box-shadow:0 14px 28px rgba(191,141,50,.32);
+    }
+
     .btn-secondary{
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
@@ -308,6 +324,8 @@
       font-size:21px;
       margin-bottom:4px;
     }
+
+    /* ===== SECTIONS ===== */
 
     .section{
       padding:46px 0 18px;
@@ -582,6 +600,8 @@
       border-top:1px solid rgba(255,255,255,.08);
     }
 
+    /* ===== TABLET ===== */
+
     @media (max-width:1100px){
       .hero-grid,
       .services-grid,
@@ -594,52 +614,182 @@
       }
     }
 
-    @media (max-width:860px){
-      .topbar-inner,
-      .section-head,
-      .hero-actions{
-        flex-direction:column;
-        align-items:flex-start;
+    /* ===== MOBILE HEADER + HERO ===== */
+
+    @media (max-width:768px){
+
+      .topbar{
+        position:relative;
       }
 
-      .hero-grid,
+      .topbar-inner{
+        min-height:auto !important;
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:14px !important;
+        padding:14px 0 !important;
+        align-items:stretch !important;
+      }
+
+      .brand-wrap{
+        display:flex !important;
+        align-items:center !important;
+        gap:12px !important;
+      }
+
+      .logo-box{
+        width:64px !important;
+        height:64px !important;
+        border-radius:18px !important;
+        flex:0 0 64px !important;
+      }
+
+      .logo-box img{
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+      }
+
+      .brand-title{
+        font-size:18px !important;
+        line-height:1.1 !important;
+        white-space:normal !important;
+      }
+
+      .brand-subtitle{
+        font-size:11px !important;
+        line-height:1.2 !important;
+      }
+
+      .nav{
+        display:grid !important;
+        grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+        gap:10px 8px !important;
+        align-items:center !important;
+        width:100% !important;
+      }
+
+      .nav a{
+        font-size:13px !important;
+        text-align:center !important;
+      }
+
+      .nav-cta{
+        grid-column:1 / -1 !important;
+        width:100% !important;
+        min-height:52px !important;
+        padding:0 18px !important;
+        margin-top:2px !important;
+        justify-content:center !important;
+        font-size:16px !important;
+        border-radius:20px !important;
+      }
+
+      .hero{
+        padding-top:20px !important;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr !important;
+        gap:18px !important;
+      }
+
+      .hero-copy{
+        padding:24px 18px !important;
+        border-radius:24px !important;
+      }
+
+      h1{
+        font-size:34px !important;
+        line-height:1.08 !important;
+        max-width:100% !important;
+      }
+
+      .hero-text{
+        font-size:16px !important;
+      }
+
+      .hero-points{
+        grid-template-columns:1fr !important;
+      }
+
+      .hero-actions{
+        flex-direction:column !important;
+        align-items:stretch !important;
+      }
+
+      .btn-primary,
+      .btn-secondary{
+        width:100% !important;
+        min-height:52px !important;
+      }
+
+      .hero-photo img{
+        min-height:320px !important;
+      }
+
+      .hero-photo-badge{
+        left:16px !important;
+        right:16px !important;
+        bottom:16px !important;
+        padding:14px 16px !important;
+      }
+
+      .hero-photo-badge strong{
+        font-size:18px !important;
+      }
+
+      .section-head{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+      }
+
       .services-grid,
       .expertise-grid,
       .trust-grid,
       .profile-grid,
       .split-block,
       .contacts-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
       }
 
-      .hero-copy{padding:32px 24px}
-      .hero-points{grid-template-columns:1fr}
-      .hero-photo img,
       .profile-photo img,
-      .image-card img{min-height:340px}
+      .image-card img{
+        min-height:340px !important;
+      }
     }
 
+    /* ===== SMALL MOBILE ===== */
+
     @media (max-width:520px){
-      .container{width:min(var(--container), calc(100% - 24px))}
-      .brand-title{
-        white-space:normal;
-        font-size:18px;
+      .container{
+        width:min(var(--container), calc(100% - 24px));
       }
-      .logo-box{
-        width:64px;
-        height:64px;
+
+      .section h2{
+        font-size:32px;
       }
-      h1{
-        font-size:34px;
-        max-width:100%;
+
+      .section-text{
+        font-size:15px;
       }
-      .hero-text,
-      .section-text{font-size:15px}
-      .btn-primary,
-      .btn-secondary,
-      .nav-cta,
-      .submit-btn{
-        width:100%;
+
+      .card-inner,
+      .service-card,
+      .expertise-card,
+      .trust-card,
+      .profile-text,
+      .text-card{
+        padding:22px;
+      }
+
+      .profile-name{
+        font-size:28px;
+      }
+
+      .profile-quote,
+      .text-card .big-text{
+        font-size:20px;
       }
     }
   </style>
@@ -894,48 +1044,4 @@
             <form class="contact-form" onsubmit="event.preventDefault(); alert('Заявка отправлена. Следующий шаг — подключить Telegram.');">
               <input class="input" type="text" placeholder="Ваше имя" required />
               <input class="input" type="tel" placeholder="Телефон" required />
-              <textarea class="textarea" placeholder="Кратко опишите ваш вопрос"></textarea>
-              <button class="submit-btn" type="submit">Получить консультацию</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-inner">
-            <div class="section-kicker">Контакты</div>
-            <h2 style="margin:0 0 12px;font-size:32px;">Юридическая компания «Правовая защита»</h2>
-            <p class="section-text" style="max-width:none;">В лице Серебрянского Александра.</p>
-
-            <ul class="contact-list">
-              <li>
-                <span class="contact-label">Город</span>
-                Балаково
-              </li>
-              <li>
-                <span class="contact-label">Адрес</span>
-                ул. Комсомольская, д. 47Б, офис 20
-              </li>
-              <li>
-                <span class="contact-label">Телефон</span>
-                <a href="tel:+79271451414">8-927-145-14-14</a>
-              </li>
-              <li>
-                <span class="contact-label">Услуги</span>
-                Консультации, защита прав в суде, обжалование действий должностных лиц, автоюрист, банкротство, независимые экспертизы
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© 2026 Юридическая компания «Правовая защита»</div>
-      <div>Балаково · Серебрянский Александр</div>
-    </div>
-  </footer>
-
-</body>
-</html>
+              <textarea
