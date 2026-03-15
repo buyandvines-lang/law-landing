@@ -27,6 +27,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:Arial,sans-serif;
@@ -87,13 +88,7 @@
       width:100%;
       height:100%;
       object-fit:contain;
-      padding:8px;
-    }
-
-    .logo-fallback{
-      font-size:25px;
-      color:var(--gold);
-      font-weight:700;
+      padding:6px;
     }
 
     .brand{
@@ -128,16 +123,18 @@
       color:var(--muted);
     }
 
-    .nav a:hover{color:#fff}
+    .nav a:hover{
+      color:#fff;
+    }
 
     .nav-cta,
-.btn-primary,
-.submit-btn{
-  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
-  color:#ffffff;
-  font-weight:800;
-  text-shadow:0 1px 2px rgba(0,0,0,.25);
-  box-shadow:0 14px 28px rgba(191,141,50,.32);
+    .btn-primary,
+    .submit-btn{
+      background:linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+      color:#ffffff;
+      font-weight:800;
+      text-shadow:0 1px 2px rgba(0,0,0,.35);
+      box-shadow:0 14px 28px rgba(191,141,50,.32);
     }
 
     .nav-cta{
@@ -147,6 +144,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      white-space:nowrap;
     }
 
     .hero{
@@ -202,13 +200,15 @@
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(38px, 6vw, 68px);
-      line-height:.97;
-      letter-spacing:-.035em;
-      max-width:760px;
+      font-size:48px;
+      line-height:1.1;
+      letter-spacing:-.03em;
+      max-width:620px;
     }
 
-    h1 span{color:var(--gold)}
+    h1 span{
+      color:var(--gold);
+    }
 
     .hero-text{
       margin:0 0 26px;
@@ -621,7 +621,10 @@
         white-space:normal;
         font-size:18px;
       }
-      h1{font-size:34px}
+      h1{
+        font-size:34px;
+        max-width:100%;
+      }
       .hero-text,
       .section-text{font-size:15px}
       .btn-primary,
@@ -639,8 +642,8 @@
     <div class="container topbar-inner">
       <div class="brand-wrap">
         <div class="logo-box">
-  <img src="logo.png" alt="Логотип Правовая защита">
-</div>
+          <img src="logo.png" alt="Логотип Правовая защита">
+        </div>
 
         <div class="brand">
           <div class="brand-title">Правовая защита</div>
