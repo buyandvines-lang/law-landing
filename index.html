@@ -1,116 +1,325 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Юридическая компания</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Юридическая компания</title>
+  <meta name="description" content="Юридическая помощь для бизнеса и частных лиц. Судебные споры, договоры, защита бизнеса, налоговые вопросы." />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      background: #f8fafc;
+      line-height: 1.5;
+    }
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      padding: 88px 0 72px;
+    }
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: 48px;
+      line-height: 1.1;
+      max-width: 760px;
+    }
+    .hero p {
+      margin: 0 0 28px;
+      font-size: 20px;
+      max-width: 680px;
+      color: #dbeafe;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #111827;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+    .section {
+      padding: 72px 0;
+    }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 36px;
+      color: #0f172a;
+    }
+    .section-lead {
+      margin: 0 0 32px;
+      font-size: 18px;
+      color: #475569;
+      max-width: 760px;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #0f172a;
+    }
+    .card p {
+      margin: 0;
+      color: #475569;
+    }
+    .stats {
+      background: #fff;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .steps .card span {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #d4af37;
+      color: #111827;
+      text-align: center;
+      line-height: 36px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .cta {
+      background: #0f172a;
+      color: white;
+      border-radius: 24px;
+      padding: 40px;
+    }
+    .cta h2 {
+      color: white;
+      margin-bottom: 10px;
+    }
+    .cta p {
+      color: #cbd5e1;
+      margin-bottom: 24px;
+      max-width: 680px;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+    }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 14px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      background: #d4af37;
+      color: #111827;
+      cursor: pointer;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #0f172a;
+    }
+    .faq-item p {
+      margin: 0;
+      color: #475569;
+    }
+    footer {
+      padding: 28px 0 40px;
+      color: #64748b;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .grid-4, .grid-3 { grid-template-columns: 1fr 1fr; }
+      form { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 38px; }
+    }
+    @media (max-width: 640px) {
+      .grid-4, .grid-3 { grid-template-columns: 1fr; }
+      .hero { padding: 64px 0 56px; }
+      .hero h1 { font-size: 32px; }
+      .section h2 { font-size: 28px; }
+      .hero p, .section-lead { font-size: 16px; }
+      .cta { padding: 24px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="hero">
+    <div class="container">
+      <h1>Юридическая помощь для бизнеса и частных лиц</h1>
+      <p>Берём на себя сложные правовые вопросы: от договоров и претензий до судебных споров и защиты бизнеса.</p>
+      <div class="hero-badges">
+        <div class="badge">10+ лет практики</div>
+        <div class="badge">Судебные споры</div>
+        <div class="badge">Защита бизнеса</div>
+        <div class="badge">Конфиденциальность</div>
+      </div>
+      <a class="btn" href="#contact">Получить консультацию</a>
+    </div>
+  </header>
 
-<header>
+  <section class="section">
+    <div class="container">
+      <h2>Чем мы помогаем</h2>
+      <p class="section-lead">Работаем с задачами, где важны скорость, точность и грамотная правовая стратегия.</p>
+      <div class="grid grid-4">
+        <div class="card">
+          <h3>Судебные споры</h3>
+          <p>Представительство в судах, подготовка позиции, защита интересов клиента на всех этапах дела.</p>
+        </div>
+        <div class="card">
+          <h3>Договорная работа</h3>
+          <p>Подготовка, проверка и согласование договоров, снижение юридических рисков по сделкам.</p>
+        </div>
+        <div class="card">
+          <h3>Защита бизнеса</h3>
+          <p>Комплексное сопровождение компаний и предпринимателей, претензионная работа и правовой аудит.</p>
+        </div>
+        <div class="card">
+          <h3>Налоговые вопросы</h3>
+          <p>Анализ рисков, подготовка позиции и сопровождение в спорах с контролирующими органами.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="container">
+  <section class="section stats">
+    <div class="container">
+      <h2>Почему нам доверяют</h2>
+      <p class="section-lead">Не обещаем невозможного. Сначала оцениваем перспективу, потом предлагаем путь решения.</p>
+      <div class="grid grid-3">
+        <div class="card stat">
+          <strong>10+</strong>
+          <p>лет юридической практики</p>
+        </div>
+        <div class="card stat">
+          <strong>300+</strong>
+          <p>проектов и дел в работе</p>
+        </div>
+        <div class="card stat">
+          <strong>24/7</strong>
+          <p>на связи по срочным вопросам</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h1>Юридическая помощь для бизнеса</h1>
+  <section class="section steps">
+    <div class="container">
+      <h2>Как проходит работа</h2>
+      <p class="section-lead">Прозрачный процесс без лишней бюрократии.</p>
+      <div class="grid grid-4">
+        <div class="card">
+          <span>1</span>
+          <h3>Консультация</h3>
+          <p>Уточняем ситуацию, сроки, риски и желаемый результат.</p>
+        </div>
+        <div class="card">
+          <span>2</span>
+          <h3>Анализ</h3>
+          <p>Изучаем документы и правовую позицию, определяем стратегию.</p>
+        </div>
+        <div class="card">
+          <span>3</span>
+          <h3>План действий</h3>
+          <p>Согласовываем этапы работы, стоимость и формат сопровождения.</p>
+        </div>
+        <div class="card">
+          <span>4</span>
+          <h3>Реализация</h3>
+          <p>Берём юридическую часть на себя и ведём дело до результата.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>10+ лет успешной практики</p>
+  <section class="section">
+    <div class="container">
+      <h2>Частые вопросы</h2>
+      <div class="grid grid-3">
+        <div class="faq-item">
+          <h3>Можно ли обратиться только за консультацией?</h3>
+          <p>Да. Можно начать с разовой консультации, а потом решить, нужно ли полное сопровождение.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Работаете ли вы с бизнесом на постоянной основе?</h3>
+          <p>Да. Есть формат абонентского юридического сопровождения для компаний и ИП.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Сколько стоит работа?</h3>
+          <p>Зависит от задачи и объёма документов. После первичного разбора даём понятную оценку.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="#form" class="btn">Получить консультацию</a>
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta">
+        <h2>Оставьте заявку</h2>
+        <p>Свяжемся с вами, уточним ситуацию и предложим следующий шаг по вашему вопросу.</p>
+        <form onsubmit="event.preventDefault(); alert('Форма работает. Следующий шаг — подключить отправку в Telegram или на почту.');">
+          <input type="text" placeholder="Ваше имя" required />
+          <input type="tel" placeholder="Телефон или Telegram" required />
+          <button type="submit">Получить консультацию</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-</div>
-
-</header>
-
-
-<section class="services">
-
-<h2>Наши услуги</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Судебные споры</h3>
-<p>Представительство в судах всех инстанций.</p>
-</div>
-
-<div class="card">
-<h3>Защита бизнеса</h3>
-<p>Юридическое сопровождение компаний.</p>
-</div>
-
-<div class="card">
-<h3>Договорное право</h3>
-<p>Подготовка и проверка договоров.</p>
-</div>
-
-<div class="card">
-<h3>Налоговые споры</h3>
-<p>Защита в налоговых делах.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="about">
-
-<h2>Почему выбирают нас</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>10+</h3>
-<p>лет практики</p>
-</div>
-
-<div class="card">
-<h3>300+</h3>
-<p>выигранных дел</p>
-</div>
-
-<div class="card">
-<h3>24/7</h3>
-<p>поддержка клиентов</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="form" class="form">
-
-<h2>Получить консультацию</h2>
-
-<form>
-
-<input type="text" placeholder="Ваше имя" required>
-
-<input type="tel" placeholder="Телефон" required>
-
-<button>Отправить</button>
-
-</form>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Юридическая компания</p>
-
-</footer>
-
+  <footer>
+    <div class="container">
+      © 2026 Юридическая компания. Все права защищены.
+    </div>
+  </footer>
 </body>
-
 </html>
