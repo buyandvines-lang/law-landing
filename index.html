@@ -1,266 +1,998 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Юридическая компания «Правовая защита» | Балаково</title>
+  <meta
+    name="description"
+    content="Юридическая компания «Правовая защита» в Балаково. Серебрянский Александр. Судебная защита, консультации, сопровождение граждан и бизнеса."
+  />
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1a2b;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-solid: #0f1d30;
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f5f7fb;
+      --muted: #b7c0cf;
+      --gold: #d7b36a;
+      --gold-strong: #c89a3d;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
 
-<title>Юридическая компания Правовая защита | Балаково</title>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-margin:0;
-font-family: Arial, sans-serif;
-background:#f5f6f8;
-color:#333;
-}
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(215, 179, 106, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 24%),
+        linear-gradient(180deg, #07101d 0%, #091424 38%, #0b1727 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:0 20px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* HERO */
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.hero{
-background:#0d1b2a;
-color:white;
-padding:100px 20px;
-text-align:center;
-}
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 16, 29, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
 
-.hero h2{
-font-weight:normal;
-color:#d4af37;
-margin-bottom:20px;
-}
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
 
-.btn{
-background:#d4af37;
-color:black;
-padding:15px 30px;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-display:inline-block;
-margin-top:20px;
-}
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-/* SERVICES */
+    .brand-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
 
-.section{
-padding:70px 20px;
-text-align:center;
-}
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
 
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
-}
+    .nav a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
 
-/* ABOUT */
+    .nav a:hover {
+      color: var(--white);
+    }
 
-.about{
-background:white;
-}
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-strong) 100%);
+      color: #111827;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(200, 154, 61, 0.25);
+    }
 
-.stat{
-font-size:30px;
-color:#d4af37;
-font-weight:bold;
-}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 48px;
+    }
 
-/* CONTACT */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
 
-.contact{
-background:#0d1b2a;
-color:white;
-text-align:center;
-padding:80px 20px;
-}
+    .hero-left,
+    .hero-right {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
 
-input{
-padding:12px;
-margin:10px;
-width:250px;
-border-radius:5px;
-border:none;
-}
+    .hero-left {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, #0d1b2d 0%, #0a1320 100%);
+      padding: 56px;
+      overflow: hidden;
+    }
 
-button{
-padding:12px 30px;
-background:#d4af37;
-border:none;
-font-weight:bold;
-border-radius:5px;
-cursor:pointer;
-}
+    .hero-left::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(215,179,106,0.18), transparent 65%);
+      pointer-events: none;
+    }
 
-/* FOOTER */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(215, 179, 106, 0.22);
+      border-radius: 999px;
+      background: rgba(215, 179, 106, 0.08);
+      color: #ead5a9;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-}
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
 
-</style>
+    .hero h1 span {
+      color: var(--gold);
+    }
 
+    .hero-lead {
+      max-width: 720px;
+      margin: 0 0 28px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: #e5eaf3;
+    }
+
+    .hero-points strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 2px;
+      color: #fff;
+    }
+
+    .tick {
+      flex: 0 0 auto;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(215, 179, 106, 0.15);
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-strong) 100%);
+      color: #111827;
+      box-shadow: 0 14px 28px rgba(200, 154, 61, 0.28);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .nav-cta:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #93a0b4;
+    }
+
+    .hero-right {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        linear-gradient(180deg, #0e1a2b 0%, #091321 100%);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .person-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 30px;
+      min-height: 100%;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, rgba(215,179,106,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .person-label {
+      display: inline-block;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #ead5a9;
+      background: rgba(215, 179, 106, 0.08);
+      border: 1px solid rgba(215, 179, 106, 0.22);
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .person-name {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.05;
+    }
+
+    .person-role {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .person-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .person-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: #dce4ef;
+    }
+
+    .person-list strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 42px 0 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .section-text {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .services-grid,
+    .features-grid,
+    .steps-grid,
+    .faq-grid,
+    .contacts-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contacts-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        linear-gradient(180deg, #0d1a2a 0%, #0b1523 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-card {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-number,
+    .step-number {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3,
+    .feature-card h3,
+    .step-card h3,
+    .faq-card h3,
+    .contact-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .service-card p,
+    .feature-card p,
+    .step-card p,
+    .faq-card p,
+    .contact-card p,
+    .contact-card li {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .service-link {
+      margin-top: 18px;
+      color: #ead5a9;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .feature-value {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .step-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+    }
+
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(215, 179, 106, 0.14);
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .input,
+    .textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 16px 18px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .input::placeholder,
+    .textarea::placeholder {
+      color: #90a0b5;
+    }
+
+    .input:focus,
+    .textarea:focus {
+      border-color: rgba(215, 179, 106, 0.5);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      min-height: 56px;
+      border: 0;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-strong) 100%);
+      color: #111827;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(200, 154, 61, 0.28);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-list li {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .contact-label {
+      display: block;
+      color: #ead5a9;
+      font-size: 13px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .footer {
+      padding: 28px 0 48px;
+      color: #8795ab;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .services-grid,
+      .features-grid,
+      .steps-grid,
+      .contacts-grid,
+      .faq-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .topbar-inner,
+      .section-head,
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 12px 16px;
+      }
+
+      .hero-grid,
+      .services-grid,
+      .features-grid,
+      .steps-grid,
+      .contacts-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left,
+      .hero-right {
+        padding: 0;
+      }
+
+      .hero-left {
+        padding: 34px 24px;
+      }
+
+      .hero-right {
+        padding: 16px;
+      }
+
+      .person-card {
+        padding: 24px;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 34px 0 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .topbar-inner {
+        min-height: 72px;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-lead,
+      .section-text {
+        font-size: 15px;
+      }
+
+      .service-card,
+      .step-card {
+        min-height: auto;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .nav-cta,
+      .submit-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-title">Правовая защита</div>
+        <div class="brand-subtitle">Юридическая компания · Балаково</div>
+      </div>
 
-<section class="hero">
+      <nav class="nav">
+        <a href="#services">Услуги</a>
+        <a href="#about">О компании</a>
+        <a href="#process">Как работаем</a>
+        <a href="#contacts">Контакты</a>
+        <a class="nav-cta" href="#contacts">Получить консультацию</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow">Юридическая компания «Правовая защита»</div>
 
-<h1>Юридическая компания «Правовая защита»</h1>
+        <h1>
+          Юридическая защита
+          <span>с сильной позицией</span>
+          и персональным сопровождением
+        </h1>
 
-<h2>Серебрянский Александр</h2>
+        <p class="hero-lead">
+          Представляем интересы граждан и бизнеса в Балаково. Работаем спокойно, жёстко по сути и без лишних обещаний — с акцентом на результат, правовую точность и доверие клиента.
+        </p>
 
-<p>Юридическая помощь для граждан и бизнеса в Балаково</p>
+        <ul class="hero-points">
+          <li>
+            <div class="tick">✓</div>
+            <div>
+              <strong>Судебная защита</strong>
+              Подготовка позиции, документов и представительство в суде.
+            </div>
+          </li>
+          <li>
+            <div class="tick">✓</div>
+            <div>
+              <strong>Личные и семейные споры</strong>
+              Консультации, сопровождение, защита интересов клиента.
+            </div>
+          </li>
+          <li>
+            <div class="tick">✓</div>
+            <div>
+              <strong>Работа с бизнесом</strong>
+              Договоры, претензии, споры, сопровождение деятельности.
+            </div>
+          </li>
+          <li>
+            <div class="tick">✓</div>
+            <div>
+              <strong>Срочная юридическая помощь</strong>
+              Быстро включаемся в ситуацию и даём следующий шаг.
+            </div>
+          </li>
+        </ul>
 
-<p>⚖ Защита прав в суде<br>
-📄 Консультации по юридическим вопросам<br>
-🚨 Срочная юридическая помощь</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contacts">Получить консультацию</a>
+          <a class="btn-secondary" href="tel:+79271451414">Позвонить сейчас</a>
+        </div>
 
-<a href="#contact" class="btn">Получить консультацию</a>
+        <div class="hero-note">
+          Балаково · ул. Комсомольская, д. 47Б, офис 20
+        </div>
+      </div>
 
-</div>
+      <div class="hero-right">
+        <div class="person-card">
+          <div class="person-label">Личное сопровождение</div>
+          <h2 class="person-name">Серебрянский Александр</h2>
+          <p class="person-role">
+            Юридическая компания «Правовая защита»
+          </p>
 
-</section>
+          <ul class="person-list">
+            <li>
+              <strong>Формат работы</strong>
+              Персональный разбор ситуации и стратегия без шаблонных ответов.
+            </li>
+            <li>
+              <strong>Подход</strong>
+              Внимание к деталям, правовая дисциплина и ясная коммуникация с клиентом.
+            </li>
+            <li>
+              <strong>Результат</strong>
+              Не “общие советы”, а понятный путь решения вопроса и сопровождение по делу.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Ключевые направления</div>
+          <h2>Услуги, которые выглядят и работают на уровне</h2>
+        </div>
+        <p class="section-text">
+          Этот блок уже можно показывать клиенту. Он не “кричащий”, а дорогой по подаче: строгая структура, уверенные формулировки и понятный набор услуг.
+        </p>
+      </div>
 
-<!-- SERVICES -->
+      <div class="services-grid">
+        <article class="card service-card">
+          <div>
+            <div class="service-number">01</div>
+            <h3>Судебные споры</h3>
+            <p>Подготовка правовой позиции, документов и представительство в суде по гражданским и иным категориям дел.</p>
+          </div>
+          <div class="service-link">Защита интересов под ключ</div>
+        </article>
 
-<section class="section">
+        <article class="card service-card">
+          <div>
+            <div class="service-number">02</div>
+            <h3>Юридические консультации</h3>
+            <p>Разбор ситуации, оценка рисков и понятная дорожная карта: что делать, куда идти и какие документы готовить.</p>
+          </div>
+          <div class="service-link">Чёткий следующий шаг</div>
+        </article>
 
-<div class="container">
+        <article class="card service-card">
+          <div>
+            <div class="service-number">03</div>
+            <h3>Семейные и личные вопросы</h3>
+            <p>Раздел имущества, алименты, споры между сторонами, защита прав и сопровождение в чувствительных делах.</p>
+          </div>
+          <div class="service-link">Деликатно и по существу</div>
+        </article>
 
-<h2>Наши услуги</h2>
+        <article class="card service-card">
+          <div>
+            <div class="service-number">04</div>
+            <h3>Сопровождение бизнеса</h3>
+            <p>Договорная работа, претензии, защита интересов компании, снижение правовых рисков в повседневной деятельности.</p>
+          </div>
+          <div class="service-link">Для ИП и компаний</div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div class="grid">
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Почему выбирают нас</div>
+          <h2>Не просто консультация, а ощущение сильной юридической опоры</h2>
+        </div>
+        <p class="section-text">
+          У дорогого юридического сайта важно не только “что вы делаете”, но и “как это воспринимается”. Здесь акцент на статус, уверенность и персональное ведение клиента.
+        </p>
+      </div>
 
-<div class="card">
-<h3>Судебные споры</h3>
-<p>Представительство в судах и защита интересов клиента.</p>
-</div>
+      <div class="features-grid">
+        <article class="card feature-card">
+          <div class="feature-value">01</div>
+          <h3>Сильная визуальная подача</h3>
+          <p>Темно-синяя палитра, золотой акцент, строгая типографика и чистый ритм блоков создают ощущение дорогой юридической практики.</p>
+        </article>
 
-<div class="card">
-<h3>Семейные дела</h3>
-<p>Развод, алименты, раздел имущества.</p>
-</div>
+        <article class="card feature-card">
+          <div class="feature-value">02</div>
+          <h3>Акцент на имени</h3>
+          <p>Мы не прячем лицо компании. Серебрянский Александр — это персональная ответственность, доверие и понятный контакт для клиента.</p>
+        </article>
 
-<div class="card">
-<h3>Юридические консультации</h3>
-<p>Анализ ситуации и рекомендации юриста.</p>
-</div>
+        <article class="card feature-card">
+          <div class="feature-value">03</div>
+          <h3>Локальное позиционирование</h3>
+          <p>Балаково, конкретный адрес, живая юридическая помощь на месте. Это повышает доверие сильнее, чем абстрактные общие фразы.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Защита прав</h3>
-<p>Подготовка документов и защита интересов клиента.</p>
-</div>
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Процесс работы</div>
+          <h2>Понятно для клиента. Уверенно по подаче.</h2>
+        </div>
+        <p class="section-text">
+          Структура ниже нужна не только для красоты. Она снижает тревогу клиента: человек понимает, что будет происходить после обращения.
+        </p>
+      </div>
 
-</div>
+      <div class="steps-grid">
+        <article class="card step-card">
+          <div class="step-badge">1</div>
+          <h3>Первичный контакт</h3>
+          <p>Вы оставляете заявку или звоните. Мы быстро уточняем суть вопроса и определяем формат дальнейшей работы.</p>
+        </article>
 
-</div>
+        <article class="card step-card">
+          <div class="step-badge">2</div>
+          <h3>Правовой анализ</h3>
+          <p>Изучаем документы, фактические обстоятельства и возможные риски, чтобы не давать пустых обещаний.</p>
+        </article>
 
-</section>
+        <article class="card step-card">
+          <div class="step-badge">3</div>
+          <h3>Стратегия защиты</h3>
+          <p>Формируем позицию, перечень действий и порядок сопровождения по вашему вопросу.</p>
+        </article>
 
+        <article class="card step-card">
+          <div class="step-badge">4</div>
+          <h3>Сопровождение до результата</h3>
+          <p>Берём юридическую часть на себя и последовательно ведём дело в выбранной правовой стратегии.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Частые вопросы</div>
+          <h2>Сдержанный блок FAQ без дешёвого маркетинга</h2>
+        </div>
+        <p class="section-text">
+          Здесь лучше звучат спокойные, взрослые ответы. Это усиливает ощущение серьёзной юридической компании.
+        </p>
+      </div>
 
-<section class="section about">
+      <div class="faq-grid">
+        <article class="card faq-card">
+          <h3>Можно ли обратиться только за консультацией?</h3>
+          <p>Да. Можно начать с консультации и анализа ситуации, а затем решить, требуется ли полное сопровождение.</p>
+        </article>
 
-<div class="container">
+        <article class="card faq-card">
+          <h3>Вы работаете только с физическими лицами?</h3>
+          <p>Нет. Компания работает как с гражданами, так и с бизнесом по вопросам сопровождения, договоров и споров.</p>
+        </article>
 
-<h2>Почему выбирают нас</h2>
+        <article class="card faq-card">
+          <h3>Можно ли получить срочную помощь?</h3>
+          <p>Да. Для неотложных ситуаций предусмотрен формат оперативного включения в вопрос и быстрого определения правового решения.</p>
+        </article>
 
-<div class="grid">
+        <article class="card faq-card">
+          <h3>Сколько стоит работа?</h3>
+          <p>Стоимость зависит от сложности вопроса, объёма документов и формата сопровождения. После первичного разбора можно дать точную оценку.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<div class="stat">10+</div>
-<p>лет юридической практики</p>
-</div>
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="contacts-grid">
+        <div class="card contact-card">
+          <div class="section-kicker">Связаться с нами</div>
+          <h3>Оставьте заявку на консультацию</h3>
+          <p>
+            Это уже хороший премиальный блок. Сейчас форма делает тестовую отправку. Следующим сообщением я могу встроить сюда отправку в Telegram без лишней возни.
+          </p>
 
-<div class="card">
-<div class="stat">300+</div>
-<p>успешных дел</p>
-</div>
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('Заявка отправлена. Дальше сюда можно подключить Telegram.');">
+            <input class="input" type="text" placeholder="Ваше имя" required />
+            <input class="input" type="tel" placeholder="Телефон" required />
+            <textarea class="textarea" placeholder="Кратко опишите вопрос"></textarea>
+            <button class="submit-btn" type="submit">Получить консультацию</button>
+          </form>
+        </div>
 
-<div class="card">
-<div class="stat">24/7</div>
-<p>неотложная консультация</p>
-</div>
+        <div class="card contact-card">
+          <div class="section-kicker">Контакты</div>
+          <h3>Юридическая компания «Правовая защита»</h3>
+          <p>Персональное сопровождение в лице Серебрянского Александра.</p>
 
-</div>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Город</span>
+              Балаково
+            </li>
+            <li>
+              <span class="contact-label">Адрес</span>
+              ул. Комсомольская, д. 47Б, офис 20
+            </li>
+            <li>
+              <span class="contact-label">Телефон</span>
+              <a href="tel:+79271451414">8-927-145-14-14</a>
+            </li>
+            <li>
+              <span class="contact-label">Формат</span>
+              Консультации, защита интересов, сопровождение граждан и бизнеса
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>Получить консультацию юриста</h2>
-
-<p>Оставьте заявку и мы свяжемся с вами</p>
-
-<form>
-
-<input type="text" placeholder="Ваше имя">
-
-<br>
-
-<input type="tel" placeholder="Телефон">
-
-<br>
-
-<button>Отправить</button>
-
-</form>
-
-<p style="margin-top:40px">
-
-📍 Балаково<br>
-ул. Комсомольская 47Б, офис 20
-
-</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Юридическая компания «Правовая защита»</p>
-
-</footer>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Юридическая компания «Правовая защита»</div>
+      <div>Балаково · Серебрянский Александр</div>
+    </div>
+  </footer>
 
 </body>
-
 </html>
