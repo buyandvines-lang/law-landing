@@ -1,127 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Юридическая компания</title>
-<link rel="stylesheet" href="style/style.css">
-<style>
 
-body{
-font-family: Arial;
-margin:0;
-color:#333;
-}
+<link rel="stylesheet" href="style.css">
 
-header{
-background:#0c1b33;
-color:white;
-padding:80px 20px;
-text-align:center;
-}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-header h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.btn{
-background:#d4af37;
-color:black;
-padding:15px 30px;
-text-decoration:none;
-font-weight:bold;
-border-radius:5px;
-}
-
-.section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
-}
-
-.services{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-.service{
-background:#f5f5f5;
-padding:20px;
-border-radius:8px;
-}
-
-.steps{
-display:flex;
-gap:20px;
-}
-
-.step{
-flex:1;
-background:#f5f5f5;
-padding:20px;
-}
-
-.form{
-background:#0c1b33;
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-input{
-padding:12px;
-margin:10px;
-width:250px;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-</style>
 </head>
 
 <body>
 
 <header>
 
-<h1>Юридическая помощь для бизнеса и частных лиц</h1>
+<div class="container">
 
-<p>Более 10 лет успешной юридической практики</p>
+<h1>Юридическая помощь для бизнеса</h1>
 
-<a class="btn" href="#form">Получить консультацию</a>
+<p>10+ лет успешной практики</p>
+
+<a href="#form" class="btn">Получить консультацию</a>
+
+</div>
 
 </header>
 
 
-<section class="section">
+<section class="services">
 
 <h2>Наши услуги</h2>
 
-<div class="services">
+<div class="grid">
 
-<div class="service">
+<div class="card">
 <h3>Судебные споры</h3>
 <p>Представительство в судах всех инстанций.</p>
 </div>
 
-<div class="service">
+<div class="card">
 <h3>Защита бизнеса</h3>
 <p>Юридическое сопровождение компаний.</p>
 </div>
 
-<div class="service">
+<div class="card">
 <h3>Договорное право</h3>
 <p>Подготовка и проверка договоров.</p>
 </div>
 
-<div class="service">
+<div class="card">
 <h3>Налоговые споры</h3>
-<p>Защита в спорах с налоговой.</p>
+<p>Защита в налоговых делах.</p>
 </div>
 
 </div>
@@ -129,44 +62,25 @@ padding:20px;
 </section>
 
 
-<section class="section">
+<section class="about">
 
 <h2>Почему выбирают нас</h2>
 
-<ul>
-<li>10+ лет опыта</li>
-<li>300+ выигранных дел</li>
-<li>Конфиденциальность</li>
-<li>Честная оценка перспектив</li>
-</ul>
+<div class="grid">
 
-</section>
-
-
-<section class="section">
-
-<h2>Как мы работаем</h2>
-
-<div class="steps">
-
-<div class="step">
-<h3>1</h3>
-<p>Консультация</p>
+<div class="card">
+<h3>10+</h3>
+<p>лет практики</p>
 </div>
 
-<div class="step">
-<h3>2</h3>
-<p>Анализ документов</p>
+<div class="card">
+<h3>300+</h3>
+<p>выигранных дел</p>
 </div>
 
-<div class="step">
-<h3>3</h3>
-<p>Стратегия</p>
-</div>
-
-<div class="step">
-<h3>4</h3>
-<p>Решение проблемы</p>
+<div class="card">
+<h3>24/7</h3>
+<p>поддержка клиентов</p>
 </div>
 
 </div>
@@ -176,16 +90,20 @@ padding:20px;
 
 <section id="form" class="form">
 
-<h2>Получить консультацию юриста</h2>
+<h2>Получить консультацию</h2>
 
-<input placeholder="Ваше имя">
-<br>
-<input placeholder="Телефон">
-<br>
+<form>
 
-<a class="btn">Отправить</a>
+<input type="text" placeholder="Ваше имя" required>
+
+<input type="tel" placeholder="Телефон" required>
+
+<button>Отправить</button>
+
+</form>
 
 </section>
+
 
 <footer>
 
@@ -194,4 +112,5 @@ padding:20px;
 </footer>
 
 </body>
+
 </html>
