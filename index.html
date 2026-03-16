@@ -673,17 +673,48 @@
       right:18px;
       bottom:18px;
       z-index:120;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-height:62px;
+      padding:0 18px 0 0;
+      border-radius:999px;
+      background:#d62828;
+      color:#ffffff;
+      box-shadow:0 18px 36px rgba(214,40,40,.38);
+      border:1px solid rgba(255,255,255,.15);
+      animation:pulseCall 1.8s infinite;
+    }
+
+    .float-call-icon{
       width:62px;
       height:62px;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(135deg,#e0b45a 0%,#c7922f 100%);
-      color:#0b1422;
       font-size:28px;
-      box-shadow:0 18px 36px rgba(199,146,47,.38);
-      border:1px solid rgba(255,255,255,.15);
+      background:#d62828;
+      color:#ffffff;
+      flex:0 0 62px;
+    }
+
+    .float-call-text{
+      font-size:14px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    @keyframes pulseCall{
+      0%{
+        box-shadow:0 0 0 0 rgba(214,40,40,.55), 0 18px 36px rgba(214,40,40,.28);
+      }
+      70%{
+        box-shadow:0 0 0 18px rgba(214,40,40,0), 0 18px 36px rgba(214,40,40,.28);
+      }
+      100%{
+        box-shadow:0 0 0 0 rgba(214,40,40,0), 0 18px 36px rgba(214,40,40,.28);
+      }
     }
 
     .reveal{
@@ -851,11 +882,24 @@
       }
 
       .float-call{
-        right:14px;
-        bottom:14px;
-        width:58px;
-        height:58px;
-        font-size:26px;
+        right:12px;
+        bottom:12px;
+        min-height:54px;
+        padding:0 14px 0 0;
+      }
+
+      .float-call-icon{
+        width:54px;
+        height:54px;
+        flex:0 0 54px;
+        font-size:24px;
+      }
+
+      .float-call-text{
+        font-size:12px;
+        max-width:120px;
+        white-space:normal;
+        line-height:1.15;
       }
     }
 
@@ -931,7 +975,7 @@
         <a href="#specialties">Направления</a>
         <a href="#about">О компании</a>
         <a href="#contacts">Контакты</a>
-        <a class="nav-cta" href="#contacts">Получить консультацию</a>
+        <a class="nav-cta" href="#contacts">Задать вопрос</a>
       </nav>
     </div>
   </header>
@@ -971,8 +1015,8 @@
         </ul>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="tel:+79271451414">Получить консультацию</a>
-          <a class="btn-secondary" href="#contacts">Написать в мессенджер</a>
+          <a class="btn-primary" href="tel:+79271451414">Задать вопрос</a>
+          <a class="btn-secondary" href="tel:+79271451414">Позвонить: 8-927-145-14-14</a>
         </div>
 
         <div class="hero-note">
@@ -1176,7 +1220,7 @@
               <input class="input" type="text" id="name" placeholder="Ваше имя" required />
               <input class="input" type="tel" id="phone" placeholder="Телефон" required />
               <textarea class="textarea" id="message" placeholder="Кратко опишите ваш вопрос"></textarea>
-              <button class="submit-btn" type="submit">Получить консультацию</button>
+              <button class="submit-btn" type="submit">Задать вопрос</button>
               <div class="form-status" id="form-status"></div>
             </form>
           </div>
@@ -1258,7 +1302,10 @@
     </div>
   </footer>
 
-  <a class="float-call" href="tel:+79271451414" aria-label="Позвонить">✆</a>
+  <a class="float-call" href="tel:+79271451414" aria-label="Позвонить">
+    <span class="float-call-icon">✆</span>
+    <span class="float-call-text">Нажмите, чтобы позвонить</span>
+  </a>
 
   <script>
     if ('scrollRestoration' in history) {
