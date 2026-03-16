@@ -606,6 +606,36 @@
       margin-bottom:6px;
     }
 
+    .messenger-link{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:#f5f7fb;
+    }
+
+    .messenger-link small{
+      display:block;
+      margin-top:4px;
+      color:#9fb0c6;
+      font-size:12px;
+      line-height:1.35;
+    }
+
+    .messenger-icon{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      flex:0 0 34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#e0b45a 0%,#c7922f 100%);
+      color:#0b1422;
+      font-weight:900;
+      font-size:16px;
+      box-shadow:0 8px 18px rgba(199,146,47,.25);
+    }
+
     .map-box{
       margin-top:18px;
       overflow:hidden;
@@ -868,7 +898,7 @@
     "telephone":"+7-927-145-14-14",
     "areaServed":"Балаково",
     "founder":"Серебрянский Александр",
-    "url":"https://dvines-lang.github.io/"
+    "url":"https://buyandvines-lang.github.io/law-landing/"
   }
   </script>
 </head>
@@ -932,8 +962,8 @@
         </ul>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="#contacts">Получить консультацию</a>
-          <a class="btn-secondary" href="tel:+79271451414">Позвонить: 8-927-145-14-14</a>
+          <a class="btn-primary" href="tel:+79271451414">Получить консультацию</a>
+          <a class="btn-secondary" href="#contacts">Написать в мессенджер</a>
         </div>
 
         <div class="hero-note">
@@ -1056,7 +1086,6 @@
           <div class="profile-role">Юридическая компания «Правовая защита» · Балаково</div>
           <p class="profile-quote">
             «Каждый юридический вопрос требует не шаблонного ответа, а точного анализа ситуации, выверенной позиции и последовательной защиты интересов клиента».
-            
           </p>
 
           <ul class="profile-list">
@@ -1087,6 +1116,20 @@
 
   <section class="section reveal">
     <div class="container">
+      <h2>Юрист в Балаково — юридическая помощь и защита прав</h2>
+
+      <p>
+        Юридическая компания «Правовая защита» оказывает профессиональную юридическую помощь в Балаково. Мы консультируем по гражданским, административным, семейным и наследственным вопросам, помогаем подготовить документы и представляем интересы клиентов в суде.
+      </p>
+
+      <p>
+        Юрист компании анализирует ситуацию, разрабатывает правовую стратегию и сопровождает дело на всех этапах. Обратиться за консультацией можно по телефону или через форму на сайте.
+      </p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
       <div class="trust-grid">
         <article class="card trust-card">
           <div class="trust-value">01</div>
@@ -1109,21 +1152,6 @@
     </div>
   </section>
 
-  <section class="section reveal">
-<div class="container">
-
-<h2>Юрист в Балаково — юридическая помощь и защита прав</h2>
-
-<p>
-Юридическая компания «Правовая защита» оказывает профессиональную юридическую помощь в Балаково. Мы консультируем по гражданским, административным, семейным и наследственным вопросам, помогаем подготовить документы и представляем интересы клиентов в суде.
-</p>
-
-<p>
-Юрист компании анализирует ситуацию, разрабатывает правовую стратегию и сопровождает дело на всех этапах. Обратиться за консультацией можно по телефону или через форму на сайте, а так-же лично обратиться по адресу: г. Балаково, ул. Комсомольская, 47Б, офис 20
-</p>
-
-</div>
-</section>
   <section class="section reveal" id="contacts">
     <div class="container">
       <div class="contacts-grid">
@@ -1165,6 +1193,26 @@
                 <a href="tel:+79271451414">8-927-145-14-14</a>
               </li>
               <li>
+                <span class="contact-label">Telegram</span>
+                <a class="messenger-link" href="https://t.me/USERNAME" target="_blank" rel="noopener">
+                  <span class="messenger-icon">✈</span>
+                  <span>
+                    Написать в Telegram
+                    <small>Быстрая связь для консультации и уточнения вопроса</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <span class="contact-label">MAX</span>
+                <a class="messenger-link" href="https://max.ru/USERNAME" target="_blank" rel="noopener">
+                  <span class="messenger-icon">M</span>
+                  <span>
+                    Написать в MAX
+                    <small>Удобно для переписки и оперативной связи</small>
+                  </span>
+                </a>
+              </li>
+              <li>
                 <span class="contact-label">Услуги</span>
                 Консультации, защита прав в суде, обжалование действий должностных лиц, автоюрист, банкротство, независимые экспертизы
               </li>
@@ -1199,14 +1247,9 @@
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-
-    window.addEventListener('load', function () {
-      window.scrollTo(0, 0);
-    });
-
-    window.addEventListener('beforeunload', function () {
-      window.scrollTo(0, 0);
-    });
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     const revealItems = document.querySelectorAll('.reveal');
 
@@ -1270,9 +1313,5 @@
       }
     });
   </script>
-  <section class="section">
-<div class="container">
-</div>
-</section>
 </body>
 </html>
